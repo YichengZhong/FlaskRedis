@@ -6,6 +6,16 @@ app = Flask(__name__)
 def hello():
     return 'Test'
 
+@app.route('/Retrieve/<table>/<value>')
+def RetrieveDate(table,value):
+    '''
+    根据表名查询数据
+    :param table: 表名
+    :param value: 数据
+    :return:
+    '''
+    return  ('Table:%s,Value:%s' % (table,value))
+
 @app.route('/syspara')
 def getSysPara():
     '''
