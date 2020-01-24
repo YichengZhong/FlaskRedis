@@ -1,9 +1,21 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 import sys
+import os
 app = Flask(__name__)
 
-#尝试本地sqlite数据显示
+#尝试本地Sqlite实现
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(app.root_path, 'data.db')
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+db = SQLAlchemy(app)
+
+class EMS_Info(db.Model):
+    '''
+    表名将会是 EMS_Info（自动生成，小写处理）
+    '''
+    id = db.Column(db.Integer, primary_key=True) # 主键
+    time=db.Column(db.String(20),nullable=True) #入库时间
+    Info = db.Column(db.String(128),nullable=True) #入库内容
 
 @app.route('/')
 def hello():
