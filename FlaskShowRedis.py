@@ -2,6 +2,7 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 import sys
 import os
+import click
 app = Flask(__name__)
 
 #尝试本地Sqlite实现
