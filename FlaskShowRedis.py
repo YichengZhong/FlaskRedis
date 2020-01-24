@@ -2,6 +2,7 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 import sys
 import os
+import time
 import click
 app = Flask(__name__)
 
@@ -16,7 +17,28 @@ class EMS_Info(db.Model):
     '''
     id = db.Column(db.Integer, primary_key=True) # 主键
     time=db.Column(db.String(20),nullable=True) #入库时间
-    Info = db.Column(db.String(128),nullable=True) #入库内容
+    info = db.Column(db.String(128),nullable=True) #入库内容
+
+@app.route('/insertTestData')
+def InitData():
+    #db.drop_all()
+    db.create_all()
+    for i in range(0,10):
+        EMS_Info_temp=EMS_Info(id=i,time=str(time.time()),info=str(i))
+        db.session.add(EMS_Info_temp)
+    db.session.commit()
+    return 'InitData Success'
+
+@app.route('/showTestData')
+def ShowData():
+    str_out="EMS_Info:<br/>"
+    EMS_Info_L=EMS_Info.query.all()
+    for i in range(0,len(EMS_Info_L)):
+        id = EMS_Info_L[i].id
+        time = EMS_Info_L[i].time
+        info = EMS_Info_L[i].info
+        str_out=str_out+str(id)+" "+time+" "+info+"<br/>"
+    return str_out
 
 @app.route('/')
 def hello():

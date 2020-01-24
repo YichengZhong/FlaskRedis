@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="46c0f212-ff7e-4bbc-8844-56d8f1de9b70" name="默认的" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/InitTestDBData.py" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/FlaskShowRedis.py" afterPath="$PROJECT_DIR$/FlaskShowRedis.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -15,11 +13,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="FlaskShowRedis.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="FlaskShowRedis.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/FlaskShowRedis.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="4" column="12" lean-forward="false" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
+            <state relative-caret-position="-279">
+              <caret line="33" column="21" lean-forward="false" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="21" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -27,7 +25,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="InitTestDBData.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="InitTestDBData.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/InitTestDBData.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
@@ -52,8 +50,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/FlaskShowRedis.py" />
         <option value="$PROJECT_DIR$/InitTestDBData.py" />
+        <option value="$PROJECT_DIR$/FlaskShowRedis.py" />
       </list>
     </option>
   </component>
@@ -216,21 +214,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FlaskShowRedis.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="4" column="12" lean-forward="false" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/InitTestDBData.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FlaskShowRedis.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-279">
+          <caret line="33" column="21" lean-forward="false" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
