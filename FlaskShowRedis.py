@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask,request, url_for, redirect, flash
 from flask_sqlalchemy import SQLAlchemy
 import sys
 import os
@@ -73,6 +73,26 @@ def InsertData(table,value):
     except:
         db.session.rollback()
         return ('InsertData:%s,Value:%s Failed' % (table, value))
+
+@app.route('/InsertData/<table>/<primarykey>')
+def SearchData(table,primarykey):
+    '''
+    根据主键进行查询
+    :param table:
+    :param value:
+    :return:
+    '''
+    EMS_Info_L = EMS_Info.query.get(int(primarykey))
+    if (EMS_Info_L is None):
+        return ('SearchData:%s,Value:%s is Not Exist' % (table, EMS_Info_L))
+
+    str_out = "EMS_Info:<br/>"
+    for i in range(0,len(EMS_Info_L)):
+        id = EMS_Info_L[i].id
+        time = EMS_Info_L[i].time
+        info = EMS_Info_L[i].info
+        str_out=str_out+str(id)+" "+time+" "+info+"<br/>"
+    return str_out
 
 @app.route('/')
 def hello():
