@@ -40,6 +40,10 @@ def ShowData():
         str_out=str_out+str(id)+" "+time+" "+info+"<br/>"
     return str_out
 
+@app.route('/InsertData/<table>/<value>')
+def InsertData(table,value):
+    return ('InsertData:%s,Value:%s' % (table, value))
+
 @app.route('/')
 def hello():
     return 'Test'
