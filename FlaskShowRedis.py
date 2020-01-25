@@ -59,6 +59,12 @@ def InsertData(table,value):
     id = value_L[0]
     time = value_L[1]
     info = value_L[2]
+
+    #插入之前先根据主键查询是否已经存在
+    EMS_Info_L = EMS_Info.query.get(int(id))
+    if(EMS_Info_L is not None):
+        return ('InsertData:%s,Value:%s is Exist' % (table, value))
+
     EMS_Info_temp = EMS_Info(id=id, time=time, info=info)
     try:
         db.session.add(EMS_Info_temp)
