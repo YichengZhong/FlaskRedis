@@ -23,11 +23,15 @@ class EMS_Info(db.Model):
 def InitData():
     #db.drop_all()
     db.create_all()
-    for i in range(0,10):
-        EMS_Info_temp=EMS_Info(id=i,time=str(time.time()),info=str(i))
-        db.session.add(EMS_Info_temp)
-    db.session.commit()
-    return 'InitData Success'
+    try:
+        for i in range(0,10):
+            EMS_Info_temp=EMS_Info(id=i,time=str(time.time()),info=str(i))
+            db.session.add(EMS_Info_temp)
+        db.session.commit()
+        return 'InitData Success'
+    except:
+        db.session.rollback()
+        return 'InitData Failed'
 
 @app.route('/showTestData')
 def ShowData():
@@ -56,9 +60,13 @@ def InsertData(table,value):
     time = value_L[1]
     info = value_L[2]
     EMS_Info_temp = EMS_Info(id=id, time=time, info=info)
-    db.session.add(EMS_Info_temp)
-    db.session.commit()
-    return ('InsertData:%s,Value:%s' % (table, value))
+    try:
+        db.session.add(EMS_Info_temp)
+        db.session.commit()
+        return ('InsertData:%s,Value:%s Success' % (table, value))
+    except:
+        db.session.rollback()
+        return ('InsertData:%s,Value:%s Failed' % (table, value))
 
 @app.route('/')
 def hello():
