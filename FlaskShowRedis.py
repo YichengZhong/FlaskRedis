@@ -1,4 +1,4 @@
-from flask import Flask,request, url_for, redirect, flash
+from flask import Flask,request, url_for, redirect, flash,render_template
 from flask_sqlalchemy import SQLAlchemy
 import sys
 import os
@@ -109,6 +109,22 @@ def RetrieveDate(table,value):
     :return:
     '''
     return  ('Table:%s,Value:%s' % (table,value))
+
+@app.route('/formtest', methods=['GET', 'POST'])
+def formtest():
+    if request.method == 'POST':  # 判断是否是 POST 请求
+        # 获取表单数据
+        title = request.form.get('title')  # 传入表单对应输入字段的 name 值
+        year = request.form.get('year')
+        # 验证数据
+        if not title or not year:
+            flash('Invalid input.')  # 显示错误提示
+            return ('title:%s,year:%s is format wrong' % (title, year))
+
+        return ('Your data:title:%s,year:%s' % (title, year))
+
+    return render_template("SQL_Input.html")
+
 
 @app.route('/syspara')
 def getSysPara():
