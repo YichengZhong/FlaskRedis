@@ -6,6 +6,8 @@ import time
 import click
 app = Flask(__name__)
 
+#加个表单
+
 #尝试本地Sqlite实现
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(app.root_path, 'data.db')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
