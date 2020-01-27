@@ -1,5 +1,6 @@
 from flask import Flask,request, url_for, redirect, flash,render_template
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy import create_engine
 import sys
 import os
 import time
@@ -120,7 +121,8 @@ def formtest():
             flash('Invalid input.')  # 显示错误提示
             return ('title:is format wrong')
 
-        return ('Your data:title:%s,year:%s' % (str_sql))
+        #执行SQL语句
+        db.session.execute(str_sql)
 
     return render_template("SQL_Input.html")
 
