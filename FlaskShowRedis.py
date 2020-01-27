@@ -125,7 +125,7 @@ def formtest():
         #执行SQL语句
         str_sql="select * from EMS__info"
         try:
-            sql_reslut=db.session.execute(str_sql)
+            sql_reslut=db.session.execute(str_sql).fetchall()
             print(sql_reslut, dir(sql_reslut))
             for i in range(0,len(sql_reslut)):
                 print(sql_reslut[i])
