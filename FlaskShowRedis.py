@@ -114,17 +114,15 @@ def RetrieveDate(table,value):
 def formtest():
     if request.method == 'POST':  # 判断是否是 POST 请求
         # 获取表单数据
-        title = request.form.get('title')  # 传入表单对应输入字段的 name 值
-        year = request.form.get('year')
+        str_sql = request.form.get('SQL')  # 传入表单对应输入字段的 name 值
         # 验证数据
-        if not title or not year:
+        if not str_sql :
             flash('Invalid input.')  # 显示错误提示
-            return ('title:%s,year:%s is format wrong' % (title, year))
+            return ('title:is format wrong')
 
-        return ('Your data:title:%s,year:%s' % (title, year))
+        return ('Your data:title:%s,year:%s' % (str_sql))
 
     return render_template("SQL_Input.html")
-
 
 @app.route('/syspara')
 def getSysPara():
