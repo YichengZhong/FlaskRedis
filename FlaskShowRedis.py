@@ -116,13 +116,25 @@ def formtest():
     if request.method == 'POST':  # 判断是否是 POST 请求
         # 获取表单数据
         str_sql = request.form.get('SQL')  # 传入表单对应输入字段的 name 值
+        print(str_sql)
         # 验证数据
         if not str_sql :
             flash('Invalid input.')  # 显示错误提示
             return ('title:is format wrong')
 
         #执行SQL语句
-        db.session.execute(str_sql)
+        str_sql="select name from sqlite_master"
+        try:
+            sql_reslut=db.session.execute(str_sql)
+            db.session.commit()
+
+            for i in range(0,len(sql_reslut)):
+                print(sql_reslut[i])
+
+            return ('SQL execute is Sucess\n')
+        except Exception as e:
+            db.session.rollback()
+            raise e
 
     return render_template("SQL_Input.html")
 
