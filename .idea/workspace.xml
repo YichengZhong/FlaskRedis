@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="46c0f212-ff7e-4bbc-8844-56d8f1de9b70" name="默认的" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/SQLtest.py" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/FlaskShowRedis.py" afterPath="$PROJECT_DIR$/FlaskShowRedis.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,11 +19,11 @@
       <file leaf-file-name="FlaskShowRedis.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/FlaskShowRedis.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="132" column="0" lean-forward="false" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
+            <state relative-caret-position="330">
+              <caret line="130" column="36" lean-forward="true" selection-start-line="130" selection-start-column="36" selection-end-line="130" selection-end-column="36" />
               <folding>
                 <element signature="e#0#73#0" expanded="true" />
-                <marker date="1580122167359" expanded="true" signature="3361:3391" ph="select name sqlite_master" />
+                <marker date="1580123341413" expanded="true" signature="3361:3384" ph="select * fro... EMS__info" />
               </folding>
             </state>
           </provider>
@@ -209,7 +207,7 @@
           <caret line="63" column="34" lean-forward="false" selection-start-line="63" selection-start-column="34" selection-end-line="63" selection-end-column="34" />
           <folding>
             <element signature="e#0#73#0" expanded="true" />
-            <marker date="1580122167359" expanded="true" signature="3361:3391" ph="select name sqlite_master" />
+            <marker date="1580123341413" expanded="true" signature="3361:3384" ph="select * fro... EMS__info" />
           </folding>
         </state>
       </provider>
@@ -220,7 +218,7 @@
           <caret line="33" column="28" lean-forward="false" selection-start-line="33" selection-start-column="28" selection-end-line="33" selection-end-column="28" />
           <folding>
             <element signature="e#0#73#0" expanded="true" />
-            <marker date="1580122167359" expanded="true" signature="3361:3391" ph="select name sqlite_master" />
+            <marker date="1580123341413" expanded="true" signature="3361:3384" ph="select * fro... EMS__info" />
           </folding>
         </state>
       </provider>
@@ -231,7 +229,7 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#73#0" expanded="true" />
-            <marker date="1580122167359" expanded="true" signature="3361:3391" ph="select name sqlite_master" />
+            <marker date="1580123341413" expanded="true" signature="3361:3384" ph="select * fro... EMS__info" />
           </folding>
         </state>
       </provider>
@@ -242,7 +240,7 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#73#0" expanded="true" />
-            <marker date="1580122167359" expanded="true" signature="3361:3391" ph="select name sqlite_master" />
+            <marker date="1580123341413" expanded="true" signature="3361:3384" ph="select * fro... EMS__info" />
           </folding>
         </state>
       </provider>
@@ -282,11 +280,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/FlaskShowRedis.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="132" column="0" lean-forward="false" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
+        <state relative-caret-position="330">
+          <caret line="130" column="36" lean-forward="true" selection-start-line="130" selection-start-column="36" selection-end-line="130" selection-end-column="36" />
           <folding>
             <element signature="e#0#73#0" expanded="true" />
-            <marker date="1580122167359" expanded="true" signature="3361:3391" ph="select name sqlite_master" />
+            <marker date="1580123341413" expanded="true" signature="3361:3384" ph="select * fro... EMS__info" />
           </folding>
         </state>
       </provider>

@@ -123,13 +123,14 @@ def formtest():
             return ('title:is format wrong')
 
         #执行SQL语句
-        str_sql="select name from sqlite_master"
+        str_sql="select * from EMS__info"
         try:
             sql_reslut=db.session.execute(str_sql)
-            db.session.commit()
-
+            print(sql_reslut, dir(sql_reslut))
             for i in range(0,len(sql_reslut)):
                 print(sql_reslut[i])
+            db.session.commit()
+
 
             return ('SQL execute is Sucess\n')
         except Exception as e:
