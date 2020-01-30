@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% if title %}
+          <title>{{ title }} 显示表的信息</title>
+        {% else %}
+          <title>显示表的信息</title>
+        {% endif %}
+    </head>
+    <body>
+        <h1>Hello, {{ html_user.username }}!</h1>
+
+        {% for post in html_posts %}     <!--for循环开始-->
+            <div>
+             <p>
+               {{ post.author.username }} 表的信息:
+                 {% for index in post.content %}
+                     <b>{{ index }}</b>
+                 {% endfor %}
+             </p>
+            </div>
+        {% endfor %}                     <!-- for循环结束-->
+
+    </body>
+</html>

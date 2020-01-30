@@ -1,4 +1,17 @@
-from __init__ import app      # 从hello包中导入app实例
-@app.route("/")               # 使用装饰器对下面的视图函数index进行装饰
+from __init__ import app
+from flask import render_template
+@app.route("/")
 def index():
-    return "你好，喵星在线！"     # 这里返回的内容，会直接送到浏览器中显示出来
+    user = {'username': '开发人员'}
+    # 日志由一个列表组成，其中里面包含两个字典，里面各有author和content字段
+    posts = [
+        {
+            'author': {'username': 'EMS表'},
+            'content': ['字段1','字段2']
+        },
+        {
+            'author': {'username': '配置表'},
+            'content': ['字段1','字段2','字段3']
+        }
+    ]
+    return render_template('index.html', title='HomePage', html_user=user, html_posts=posts)
