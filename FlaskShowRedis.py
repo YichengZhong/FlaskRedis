@@ -6,7 +6,7 @@ from sqlalchemy import create_engine
 import sys
 import os
 import time
-import click
+from flask_login import UserMixin
 app = Flask(__name__)
 
 #加个表单
@@ -24,20 +24,16 @@ class EMS_Info(db.Model):
     time=db.Column(db.String(20),nullable=True) #入库时间
     info = db.Column(db.String(128),nullable=True) #入库内容
 
-class User(db.Model):
-    '''
-    用户信息存储
-    '''
+# User继承UserMixin类
+class User(UserMixin, db.Model):
+    __tablename__ = 'user'
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(20))
-    username = db.Column(db.String(20)) # 用户名
-    password_hash = db.Column(db.String(128)) # 密码散列值
+    username = db.Column(db.String(20), unique=True, nullable=False)
+    email = db.Column(db.String(120), unique=True, nullable=False)
+    password = db.Column(db.String(60),  nullable=False)
 
-    def set_password(self, password): # 用来设置密码的方法，接受密码 作为参数
-        self.password_hash = generate_password_hash(password) # 将生成的密码保持到对应字段
-
-    def validate_password(self, password): # 用于验证密码的方法，接 受密码作为参数
-        return check_password_hash(self.password_hash, password) # 返回布尔值
+    def __repr__(self):
+        return f"User('{self.username}','{self.email}','{self.password}')"
 
 @app.route('/insertTestData')
 def InitData():
