@@ -6,6 +6,8 @@ from sqlalchemy import create_engine
 import sys
 import os
 import time
+import redis
+
 from flask_login import UserMixin
 app = Flask(__name__)
 
