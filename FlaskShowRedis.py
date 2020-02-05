@@ -7,8 +7,8 @@ import sys
 import os
 import time
 import redis
+from flask_session import Session
 
-from flask_login import UserMixin
 app = Flask(__name__)
 
 #加个表单
@@ -16,6 +16,11 @@ app = Flask(__name__)
 #尝试本地Sqlite实现
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(app.root_path, 'data.db')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+app.config['SECRET_KEY'] = 'secret_key'
+app.config['SESSION_TYPE'] = 'redis'
+app.config['SESSION_REDIS'] = redis.Redis(host='192.168.160.137', port='6379', password='zyc')
+
 db = SQLAlchemy(app)
 
 class EMS_Info(db.Model):
@@ -26,16 +31,6 @@ class EMS_Info(db.Model):
     time=db.Column(db.String(20),nullable=True) #入库时间
     info = db.Column(db.String(128),nullable=True) #入库内容
 
-# User继承UserMixin类
-class User(UserMixin, db.Model):
-    __tablename__ = 'user'
-    id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(20), unique=True, nullable=False)
-    email = db.Column(db.String(120), unique=True, nullable=False)
-    password = db.Column(db.String(60),  nullable=False)
-
-    def __repr__(self):
-        return f"User('{self.username}','{self.email}','{self.password}')"
 
 @app.route('/insertTestData')
 def InitData():
