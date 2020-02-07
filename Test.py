@@ -1,5 +1,5 @@
 import redis
-r=redis.StrictRedis(host="192.168.160.128",port=6380,db=0)
+r=redis.StrictRedis(host="192.168.160.137",port=6379,db=0)
 
 r.set('foo','1')
 a=r.get('foo')
