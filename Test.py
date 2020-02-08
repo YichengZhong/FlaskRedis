@@ -1,26 +1,8 @@
 import redis
+from keyCommand import key_func
+from stringCommand import string_func
+from hashCommand import hash_func
 r=redis.StrictRedis(host="192.168.160.140",port=6379,db=0)
-
-def key_func(command):
-    '''
-    运行key命令
-    :return:
-    '''
-    print('key_func')
-
-def string_func(command):
-    '''
-    运行string命令
-    :return:
-    '''
-    print('string_func')
-
-def hash_func(command):
-    '''
-    运行hash命令
-    :return:
-    '''
-    print('third_func')
 
 dic_commandswitch = {"key_command":key_func,"string_command":string_func,"hash_command":hash_func}
 
