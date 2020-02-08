@@ -1,14 +1,25 @@
+from __init_redis__ import redisConnect
 def string_get_func(key):
-    pass
+    result = redisConnect.get(key)
+    return result
 
 def string_set_func(key,value):
-    pass
+    result =redisConnect.set(key,value)
+    return result
 
 def string_mget_func(L_key):
-    pass
+    result =redisConnect.mget(L_key)
+    return result
 
 def string_mset_func(L_key,L_value):
-    pass
+    #保护
+    if(len(L_key) != len(L_value)):
+        return 0
+
+    dict_key_value=dict(zip(L_key,L_value))
+    result = redisConnect.mset(dict_key_value)
+
+    return result
 
 dic_string_commandswitch = {"string_getcommand":string_get_func,
                             "string_setcommand":string_set_func,
