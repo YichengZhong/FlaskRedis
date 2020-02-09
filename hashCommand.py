@@ -1,4 +1,4 @@
-def hash_get_func(command):
+def hash_get_func(key,redisConnect):
     pass
 
 def hash_set_func(command):

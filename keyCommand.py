@@ -2,8 +2,12 @@ def key_del_func(key,redisConnect):
     result =redisConnect.delete(key)
     return result
 
-def key_scan_func(command):
-    pass
+def key_scan_func(begincur,keypattern,limitsize,redisConnect):
+    if(limitsize>=100):
+        limitsize=100;
+
+    result = redisConnect.scan(begincur,keypattern,limitsize)
+    return_pos, datalist = result
 
 def key_exists_func(key,redisConnect):
     result = redisConnect.exists(key)
