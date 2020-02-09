@@ -1,4 +1,3 @@
-from __init_redis__ import redisConnect
 def key_del_func(command):
     pass
 

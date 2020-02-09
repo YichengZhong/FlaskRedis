@@ -7,7 +7,7 @@ dic_commandswitch = {"key_command":key_func,
                      "string_command":string_func,
                      "hash_command":hash_func}
 
-def commandTran(command):
+def commandTran(command,redisConnect):
     '''
     根据命令选择指令
     :param command:

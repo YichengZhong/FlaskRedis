@@ -1,4 +1,3 @@
-from __init_redis__ import redisConnect
 def hash_get_func(command):
     pass
 
