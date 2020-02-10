@@ -39,3 +39,18 @@ def hash_func(command):
     :return:
     '''
     print('hash_func')
+
+    hash_command_type = "hash_wrong_command"
+    L_command_words = command.split(' ')
+    if (len(L_command_words) < 2):
+        print("command len is error\n")
+        return
+
+    if (L_command_words[0] == "set" and len(L_command_words) == 3):
+        pass
+    elif (L_command_words[0] == "get" and len(L_command_words) == 2):
+        pass
+    elif (L_command_words[0] == "mset" and len(L_command_words) % 2 == 1):
+        pass
+    elif (L_command_words[0] == "mget"):
+        pass
