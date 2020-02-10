@@ -38,3 +38,12 @@ def string_func(command,redisConnect):
         print("command len is error\n")
         return
 
+    if(L_command_words[0]=="set" and len(L_command_words)==3):
+        pass
+    elif (L_command_words[0]=="get" and len(L_command_words)==2):
+        pass
+    elif (L_command_words[0]=="mset" and len(L_command_words)%2==1):
+        pass
+    elif (L_command_words[0]=="mget"):
+        pass
+
