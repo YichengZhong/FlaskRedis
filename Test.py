@@ -7,6 +7,10 @@ dic_commandswitch = {"key_command":key_func,
                      "string_command":string_func,
                      "hash_command":hash_func}
 
+L_key_command_keywords=["del","scan","exists"]
+L_string_command_keywords=["set","get","mset","mget"]
+L_hash_command_keywords=["hset","hget","hmset","hmget","hexists","hdel"]
+
 def commandTran(command,redisConnect):
     '''
     根据命令选择指令
