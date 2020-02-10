@@ -22,7 +22,7 @@ def string_mset_func(L_key,L_value,redisConnect):
 
 dic_string_commandswitch = {"string_getcommand":string_get_func,
                             "string_setcommand":string_set_func,
-                            "key_mgetscommand":string_mget_func,
+                            "string_mgetscommand":string_mget_func,
                             "string_msetcommand": string_mset_func}
 
 def string_func(command,redisConnect):
@@ -31,3 +31,10 @@ def string_func(command,redisConnect):
     :return:
     '''
     print('string_func')
+
+    string_command_type = "string_wrong_command"
+    L_command_words = command.split(' ')
+    if (len(L_command_words) < 2):
+        print("command len is error\n")
+        return
+
