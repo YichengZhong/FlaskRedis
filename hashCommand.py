@@ -46,11 +46,15 @@ def hash_func(command):
         print("command len is error\n")
         return
 
-    if (L_command_words[0] == "set" and len(L_command_words) == 3):
+    if (L_command_words[0] == "hset" and len(L_command_words) == 3):
         pass
-    elif (L_command_words[0] == "get" and len(L_command_words) == 2):
+    elif (L_command_words[0] == "hget" and len(L_command_words) == 2):
         pass
-    elif (L_command_words[0] == "mset" and len(L_command_words) % 2 == 1):
+    elif (L_command_words[0] == "hmset" and len(L_command_words) % 2 == 1):
         pass
-    elif (L_command_words[0] == "mget"):
+    elif (L_command_words[0] == "hmget"):
+        pass
+    elif (L_command_words[0] == "hexists"):
+        pass
+    elif (L_command_words[0] == "hdel"):
         pass
