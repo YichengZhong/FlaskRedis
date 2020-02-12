@@ -39,9 +39,14 @@ def string_func(command,redisConnect):
         return
 
     if(L_command_words[0]=="set" and len(L_command_words)==3):
-        pass
+        key=L_command_words[1]
+        value=L_command_words[2]
+        result =string_set_func(key, value, redisConnect)
+        return result
     elif (L_command_words[0]=="get" and len(L_command_words)==2):
-        pass
+        key = L_command_words[1]
+        result = string_get_func(key, redisConnect)
+        return result
     elif (L_command_words[0]=="mset" and len(L_command_words)%2==1):
         pass
     elif (L_command_words[0]=="mget"):
