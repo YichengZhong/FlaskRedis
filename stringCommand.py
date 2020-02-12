@@ -30,7 +30,7 @@ def string_func(command,redisConnect):
     运行string命令
     :return:
     '''
-    print('string_func')
+    print('string_func',command)
 
     string_command_type = "string_wrong_command"
     L_command_words = command.split(' ')

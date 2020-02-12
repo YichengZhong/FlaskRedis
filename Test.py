@@ -36,9 +36,13 @@ def commandTran(command,redisConnect):
         command_type = "wrong_command"
 
     try:
-        dic_commandswitch[command_type](command,redisConnect) #执行相应的方法
+        result=dic_commandswitch[command_type](command,redisConnect) #执行相应的方法
+        print(result)
     except KeyError as e:
         print("command is error")
 
 if __name__ == '__main__':
     commandTran("set runoobkey redis",redisConnect)
+    commandTran("get runoobkey", redisConnect)
+    commandTran("mset runoobkey1 redis1 runoobkey2 redis2", redisConnect)
+    commandTran("mget runoobkey1 runoobkey2 runoobkey3", redisConnect)
