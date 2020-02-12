@@ -23,3 +23,14 @@ def key_func(command):
     :return:
     '''
     print('key_func')
+    L_command_words = command.split(' ')
+    if (len(L_command_words) < 2):
+        print("command len is error\n")
+        return
+
+    if ( L_command_words[0] == "del"):
+        pass
+    elif ( L_command_words[0] == "exists" ):
+        pass
+    elif ( L_command_words[0] == "scan" ):
+        pass
