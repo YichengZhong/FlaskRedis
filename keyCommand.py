@@ -4,7 +4,7 @@ def key_del_func(key,redisConnect):
 
 def key_scan_func(begincur,keypattern,limitsize,redisConnect):
     if(limitsize>=100):
-        limitsize=100;
+        limitsize=100
 
     result = redisConnect.scan(begincur,keypattern,limitsize)
     return_pos, datalist = result
