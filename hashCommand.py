@@ -52,7 +52,7 @@ def hash_func(command):
         pass
     elif (L_command_words[0] == "hmset" and len(L_command_words) % 2 == 1):
         pass
-    elif (L_command_words[0] == "hmget"):
+    elif (L_command_words[0] == "hmget" and len(L_command_words) >= 3):
         pass
     elif (L_command_words[0] == "hexists"):
         pass
