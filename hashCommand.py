@@ -33,7 +33,7 @@ dic_string_commandswitch = {"hash_getcommand":hash_get_func,
                             "hash_hexists":hash_hexists_func,
                             "hash_delcommand":hash_del_func}
 
-def hash_func(command):
+def hash_func(command,redisConnect):
     '''
     运行hash命令
     :return:
@@ -46,10 +46,17 @@ def hash_func(command):
         print("command len is error\n")
         return
 
-    if (L_command_words[0] == "hset" and len(L_command_words) == 3):
-        pass
-    elif (L_command_words[0] == "hget" and len(L_command_words) == 2):
-        pass
+    if (L_command_words[0] == "hset" and len(L_command_words) == 4):
+        name=L_command_words[1]
+        key=L_command_words[2]
+        value=L_command_words[3]
+        result=redisConnect.hset(name,key,value)
+        return result
+    elif (L_command_words[0] == "hget" and len(L_command_words) == 3):
+        name = L_command_words[1]
+        key = L_command_words[2]
+        result = redisConnect.hget(name, key)
+        return result
     elif (L_command_words[0] == "hmset" and len(L_command_words) % 2 == 1):
         pass
     elif (L_command_words[0] == "hmget" and len(L_command_words) >= 3):
