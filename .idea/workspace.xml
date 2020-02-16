@@ -61,7 +61,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/stringCommand.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="73">
+            <state relative-caret-position="-557">
               <caret line="27" column="36" lean-forward="true" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="36" />
             </state>
           </provider>
@@ -70,8 +70,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/hashCommand.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="31">
-              <caret line="55" column="33" lean-forward="true" selection-start-line="55" selection-start-column="8" selection-end-line="55" selection-end-column="33" />
+            <state relative-caret-position="115">
+              <caret line="57" column="53" selection-start-line="57" selection-start-column="53" selection-end-line="57" selection-end-column="53" />
             </state>
           </provider>
         </entry>
@@ -430,15 +430,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/stringCommand.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="73">
+        <state relative-caret-position="-557">
           <caret line="27" column="36" lean-forward="true" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="36" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hashCommand.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="31">
-          <caret line="55" column="33" lean-forward="true" selection-start-line="55" selection-start-column="8" selection-end-line="55" selection-end-column="33" />
+        <state relative-caret-position="115">
+          <caret line="57" column="53" selection-start-line="57" selection-start-column="53" selection-end-line="57" selection-end-column="53" />
         </state>
       </provider>
     </entry>

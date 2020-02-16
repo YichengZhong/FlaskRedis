@@ -50,12 +50,12 @@ def hash_func(command,redisConnect):
         name=L_command_words[1]
         key=L_command_words[2]
         value=L_command_words[3]
-        result=redisConnect.hset(name,key,value)
+        result=hash_set_func(name,key,value,redisConnect)
         return result
     elif (L_command_words[0] == "hget" and len(L_command_words) == 3):
         name = L_command_words[1]
         key = L_command_words[2]
-        result = redisConnect.hget(name, key)
+        result = hash_get_func(name, key,redisConnect)
         return result
     elif (L_command_words[0] == "hmset" and len(L_command_words) % 2 == 1):
         pass
