@@ -57,10 +57,17 @@ def hash_func(command,redisConnect):
         key = L_command_words[2]
         result = hash_get_func(name, key,redisConnect)
         return result
-    elif (L_command_words[0] == "hmset" and len(L_command_words) % 2 == 1):
-        pass
+    elif (L_command_words[0] == "hmset" and len(L_command_words) % 2 == 0 and len(L_command_words)>=6):
+        name = L_command_words[1]
+        L_key=L_command_words[2:len(L_command_words):2]
+        L_value=L_command_words[3:len(L_command_words):2]
+        result = hash_mset_func(name, L_key,L_value, redisConnect)
+        return result
     elif (L_command_words[0] == "hmget" and len(L_command_words) >= 3):
-        pass
+        name = L_command_words[1]
+        L_key = L_command_words[1:]
+        result = hash_mget_func(name, L_key,redisConnect)
+        return result
     elif (L_command_words[0] == "hexists"):
         pass
     elif (L_command_words[0] == "hdel"):
