@@ -22,8 +22,8 @@ def hash_hexists_func(name, key,redisConnect):
     result =redisConnect.hexists(name, key)
     return result
 
-def hash_del_func(name, key,redisConnect):
-    result = redisConnect.hdel(name, key)
+def hash_del_func(name, L_key,redisConnect):
+    result = redisConnect.hdel(name, L_key)
     return result
 
 dic_string_commandswitch = {"hash_getcommand":hash_get_func,
@@ -68,7 +68,13 @@ def hash_func(command,redisConnect):
         L_key = L_command_words[1:]
         result = hash_mget_func(name, L_key,redisConnect)
         return result
-    elif (L_command_words[0] == "hexists"):
-        pass
-    elif (L_command_words[0] == "hdel"):
-        pass
+    elif (L_command_words[0] == "hexists" and len(L_command_words) == 3):
+        name = L_command_words[1]
+        key = L_command_words[2]
+        result = hash_hexists_func(name, key, redisConnect)
+        return result
+    elif (L_command_words[0] == "hdel" and len(L_command_words) >= 3):
+        name = L_command_words[1]
+        L_key = L_command_words[1:]
+        result = hash_del_func(name, L_key, redisConnect)
+        return result
