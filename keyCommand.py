@@ -28,9 +28,9 @@ def key_func(command):
         print("command len is error\n")
         return
 
-    if ( L_command_words[0] == "del"):
+    if ( L_command_words[0] == "del" and len(L_command_words) == 2):
         pass
-    elif ( L_command_words[0] == "exists" ):
+    elif ( L_command_words[0] == "exists" and len(L_command_words) == 2 ):
         pass
     elif ( L_command_words[0] == "scan" ):
         pass
