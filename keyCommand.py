@@ -17,7 +17,7 @@ dic_key_commandswitch = {"key_delcommand":key_del_func,
                          "key_scancommand":key_scan_func,
                          "key_existscommand":key_exists_func}
 
-def key_func(command):
+def key_func(command,redisConnect):
     '''
     运行key命令
     :return:
@@ -29,7 +29,9 @@ def key_func(command):
         return
 
     if ( L_command_words[0] == "del" and len(L_command_words) == 2):
-        pass
+        name = L_command_words[1]
+        result = key_del_func(name,redisConnect)
+        return result
     elif ( L_command_words[0] == "exists" and len(L_command_words) == 2 ):
         pass
     elif ( L_command_words[0] == "scan" ):
