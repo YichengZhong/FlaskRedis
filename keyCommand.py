@@ -33,6 +33,8 @@ def key_func(command,redisConnect):
         result = key_del_func(name,redisConnect)
         return result
     elif ( L_command_words[0] == "exists" and len(L_command_words) == 2 ):
-        pass
+        name = L_command_words[1]
+        result = key_exists_func(name, redisConnect)
+        return result
     elif ( L_command_words[0] == "scan" ):
         pass
