@@ -140,8 +140,6 @@ def formtest():
             for i in range(0,len(sql_reslut)):
                 print(sql_reslut[i])
             db.session.commit()
-
-
             return ('SQL execute is Sucess\n')
         except Exception as e:
             db.session.rollback()
