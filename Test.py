@@ -46,3 +46,4 @@ if __name__ == '__main__':
     commandTran("get runoobkey", redisConnect)
     commandTran("mset runoobkey1 redis1 runoobkey2 redis2", redisConnect)
     commandTran("mget runoobkey1 runoobkey2 runoobkey3", redisConnect)
+    commandTran("del runoobkey1 ", redisConnect)
